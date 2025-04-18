@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<h2>{{ app.name }}</h2>
+{% if app.image %}
+<img src="{{ url_for('static', filename='uploads/' + app.image) }}" style="max-width: 300px;"> {% endif %}
+<p class="mt-3">{{ app.description }}</p>
+{% if app.file %}
+<a href="{{ url_for('static', filename='../uploads/' + app.file) }}" class="btn btn-primary mt-2" download>Download App</a> {% endif %} {% endblock %}
